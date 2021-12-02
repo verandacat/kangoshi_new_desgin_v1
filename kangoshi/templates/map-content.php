@@ -1,7 +1,9 @@
 <?php if(is_page('baito')) : ?>
 <?php $urlT = 'bank'; ?>
 <?php else : ?>
-<?php $urlT = 'worker'; ?>
+<?php //$urlT = 'worker'; 
+$urlT = 'roo';
+?>
 <?php endif; ?>
 
 <div class="map"><?php if(!is_mobile()) : ?>

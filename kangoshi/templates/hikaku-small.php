@@ -1,5 +1,12 @@
 <div class="hikaku__small">
   <table id="ctt__table">
+    <colgroup>
+      <col width="20%">
+      <col width="20%">
+      <col width="20%">
+      <col width="20%">
+      <col width="20%">
+    </colgroup>
     <tr>
       
       <?php for($k = 1; $k <= 5; $k++ ) : ?>

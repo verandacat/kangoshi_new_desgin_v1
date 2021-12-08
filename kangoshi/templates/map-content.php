@@ -1,8 +1,8 @@
 <?php if(is_page('baito')) : ?>
 <?php $urlT = 'bank'; ?>
 <?php else : ?>
-<?php //$urlT = 'worker'; 
-$urlT = 'roo';
+<?php $urlT = 'worker'; 
+// $urlT = 'roo';
 ?>
 <?php endif; ?>
 

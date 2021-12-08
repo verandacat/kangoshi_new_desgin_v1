@@ -59,10 +59,44 @@
 ?>
 <?php endif; ?>
 
-<?php function star($val) { ?><?php if($val==1) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--01.svg" alt="1"/><?php } elseif($val==2) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="2"/><?php } elseif($val==3) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="3"/><?php } else { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--03.svg" alt="4"/><?php } ?><?php }
+<?php function star($val) { ?>
+<?php if($val==1) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/star--01.svg" alt="1"/>
+<?php } elseif($val==2) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="2"/>
+<?php } elseif($val==3) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="3"/>
+<?php } else { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/star--03.svg" alt="4"/>
+<?php } ?>
+<?php } ?>
+
+<?php function number($val) {
+  if($val == 1) {
+    echo "5.0";
+  } elseif($val == 2) {
+    echo "4.7";
+  } elseif($val == 3) {
+    echo "4.5";
+  } elseif($val == 4) {
+    echo "4.3";
+  } else {
+    echo "4.0";
+  }
+} 
 ?>
 
-<?php function maru($val) { ?><?php if($val==1) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--01.svg" alt="1"/><?php } elseif($val==2) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--02.svg" alt="2"/><?php } else { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--03.svg" alt="3"/><?php } ?><?php } ?>
+<?php function maru($val) { ?>
+<?php if($val==1) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/maru--01.svg" alt="1"/>
+<?php } elseif($val==2) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/maru--02.svg" alt="2"/>
+<?php } elseif($val==3) { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/maru--03.svg" alt="3"/>
+<?php } else { ?>
+<img src="<?php bloginfo('template_url'); ?>/images/icons/maru--04.svg" alt="4"/>
+<?php } ?> 
+<?php } ?>
 
 <?php $the_query = new WP_Query( $args ); ?>
 <div class="hikaku">
@@ -95,6 +129,7 @@
         if ( $the_query->have_posts() ) :
             while ( $the_query->have_posts() ) : $the_query->the_post();
         $url = get_field('url');
+        $rank = get_field('rank');
         $logo = get_field('logoImg');
         $starImg = get_field('starImg');
         $number = get_field('number');
@@ -111,7 +146,7 @@
           
         ?>
       <tr>
-        <th><span class="f-20"><?php echo $i; ?></span>位</th>
+        <th><span class="f-20"><?php echo $rank; ?></span>位</th>
         <td><a class="prrrr" href="<?php echo home_url('/'); ?><?php echo $url; ?>" target="_blank">
             <p class="font__bold"><?php the_title(); ?></p><img src="<?php echo $logo; ?>" alt="" width="99%"/></a></td>
         <td><a class="prrrr" href="<?php echo home_url('/'); ?><?php echo $url; ?>" target="_blank">

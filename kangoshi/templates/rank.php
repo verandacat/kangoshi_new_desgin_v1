@@ -31,7 +31,7 @@ $featureBottom = get_field('feature')['featureBottom'];
           <?php if(is_page('baito')) : ?>
           <?php echo $numberB; ?>
           <?php else : ?>
-          <?php echo $number; ?>
+          <?php number($i); ?>
           <?php endif; ?>
         </span>
         </div>

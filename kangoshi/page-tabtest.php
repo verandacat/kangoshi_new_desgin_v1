@@ -1,10 +1,17 @@
+<?php
+/* Template Name: test-tab */
+?>
+
 <?php get_header(); ?>
+
+
 <div id="wrapper">
   <main id="main">
     <section id="section__hikaku">
       <h2 class="hikaku__title h2__title">
         <div><span class="f-24">転職成功者が使った</span><br>看護師求人・転職サイト</div>
-      </h2><?php include "templates/hikaku-tab.php"; ?>
+      </h2>
+      <?php include "templates/hikaku-tab.php"; ?>
     </section>
     <section id="section__point">
       <h2 class="point__title h2__title">
@@ -13,14 +20,14 @@
     </section><!-- RANKING -->
     <section id="section__ranking">
       <h2 class="h2__title">
-        <div><span class="f-24">転職成功者が使った</span><br>看護師求人・転職サイトBEST5</div>
+        <div><span class="f-24">転職成功者が使った</span><br>看護師求人・転職サイトBEST4</div>
       </h2>
       <div class="ranking__descirpt"> <img class="woman"
           src="<?php bloginfo('template_url'); ?>/images/icons/woman--pink.png"
           alt="alt" />1サイトだけでは希望の求人情報を見逃すおそれがあるため、2～3サイトの登録がお勧めです！</div><?php include "templates/rank.php"; ?>
     </section>
     <section id="section__worker">
-      <?php include "templates/foot-content.php"; ?>
+     <?php include "templates/foot-content.php"; ?>
     </section><?php get_search_form(); ?>
     <section id="section__foot">
       <div class="foot__map">
@@ -28,4 +35,6 @@
       <div class="foot__column"><?php include "templates/col-content.php"; ?></div>
     </section>
   </main>
-</div><?php get_footer(); ?>
+</div>
+
+<?php get_footer(); ?>

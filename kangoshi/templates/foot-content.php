@@ -15,8 +15,8 @@
       'orderby' => 'meta_value_num',
       'order' => 'asc'
     );} else {
-      // $pickItem = '医療ワーカー';
-      $pickItem = '看護roo!';
+      $pickItem = '医療ワーカー';
+      // $pickItem = '看護roo!';
       $args = array(
         'posts_per_page' => 1,
         'post_type' => 'kangoshi',

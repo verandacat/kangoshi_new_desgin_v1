@@ -15,6 +15,8 @@
 <script src="<?php bloginfo('template_url'); ?>/js/scripts.js"> </script>
 <script src="<?php bloginfo('template_url'); ?>/js/storage.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/location.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/tab.js"></script>
+
 <?php if(!is_page('baito')) : ?>
 <script type="text/javascript" charset="utf-8" src="https://kenga.tech/pop-ups-waurdptkzuzxicnm.js"></script>
 <?php endif; ?>

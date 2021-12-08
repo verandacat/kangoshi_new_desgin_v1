@@ -109,7 +109,7 @@ if(is_array($searchCommit)) {
 }
 $metaquerysp['relation'] = 'AND';
 
- ?><?php include 'templates/hikaku.php'; ?>
+ ?><?php include 'templates/hikaku-tab.php'; ?>
 <?php get_search_form(); ?>
     </section>
   </main><?php get_footer(); ?>

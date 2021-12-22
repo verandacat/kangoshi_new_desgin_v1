@@ -575,17 +575,15 @@ h3.all__sub--title::after {
   font-weight: bold;
 }
 .bg-y {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(20%, rgba(255, 255, 255, 0)),
-    color-stop(80%, #fedc85)
-  );
-  background: linear-gradient(rgba(255, 255, 255, 0) 20%, #fedc85 80%);
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0) 70%, #fedc85 50%);
+  background: linear-gradient(rgba(255, 255, 255, 0) 70%, #fedc85 50%);
 }
 .bg-w {
   background: white;
+}
+.y-box {
+  background: #fedc85;
+  padding: 2px;
 }
 .f-md {
   font-size: 0.7em;
@@ -614,9 +612,16 @@ h3.all__sub--title::after {
 .f-24 {
   font-size: 24px;
 }
+.f-30 {
+  font-size: 38px;
+}
+
 @media screen and (max-width: 768px) {
   .f-24 {
     font-size: 20px;
+  }
+  .f-30 {
+    font-size: 27px;
   }
 }
 .center {
@@ -1064,6 +1069,7 @@ h4 {
 .hikaku__wrap table#hikaku p {
   margin-bottom: 4px;
 }
+
 
 
 #section__hikaku {
@@ -1925,7 +1931,7 @@ section#section__foot .foot_column {
   color: white;
   font-size: 0.8rem;
   font-weight: bold;
-  width: 20%;
+  width: 80px;
 }
 .map .map__area .area__right ul.right__arealink li .arealink__links {
   padding: 4px;
@@ -1934,7 +1940,6 @@ section#section__foot .foot_column {
   color: #595153;
   display: inline-block;
   text-decoration: underline;
-  margin-right: 8px;
   font-size: 0.8rem;
 }
 .map
@@ -2763,3 +2768,96 @@ section#section__foot .foot_column {
     font-size: 0.8rem!important;
   }
 }
+
+/* 211222 都道府県ページ追加 */
+#section__todo--title {
+  position: relative;
+  background-image: url(./images/content/todo__bg.png);
+  background-size: 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#section__todo--title::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#section__todo--title .todo__icon {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 120px;
+}
+
+#section__todo--title .todo__title {
+  max-width: 80%;
+  line-height: 1.4;
+  padding: 34px 20px;
+  position: relative;
+  margin: 10px auto 0;
+  z-index: 3;
+  font-weight: normal;
+}
+
+#section__todo--title .todo__title .first-text {
+  color: #ff5c6a;
+  letter-spacing: 2px;
+
+}
+#section__todo--title .todo__title .second-text {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.todo__descript {
+  width: 980px;
+  margin: 10px auto;
+  max-width: 94%;
+  background-color: #fef8e5;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0 3px #ff5c6a;
+  position: relative;
+  z-index: 3;
+}
+.todo__descript .todo__desicon {
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.todo__descript p {
+  padding: 20px 120px 20px 20px;
+}
+@media (max-width: 768px) {
+  #section__todo--title {
+    background-size: 600px;
+  }
+  #section__todo--title .todo__icon {
+    width: 90px;
+    top: -15px;
+  }
+  #section__todo--title .todo__title {
+    padding: 20px;
+  }
+  .todo__descript p {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .todo__descript .todo__desicon {
+    width: 60px;
+    position: absolute;
+    left: 5px;
+    top: -63px;
+    transform: inherit;
+  }
+}
+

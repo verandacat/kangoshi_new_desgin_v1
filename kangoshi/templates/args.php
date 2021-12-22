@@ -1,12 +1,59 @@
+<?php if(is_page('baito')) : ?>
+<?php 
+  $noEmpty = !'';
 
-<?php $args = array(
+  $args = array(
+      'posts_per_page' => -1,
+      'post_type' => 'kangoshi',
+      'category_name' => 'baito',
+      'orderby' => 'meta_value_num',
+      'post_status' => 'publish',
+      'order' => 'asc',
+      'meta_query' => array(
+        'relation' => 'AND',
+        array(
+          'key' => 'rank-baito',
+          'value'   => $noEmpty,
+          'compare' => '>=', 
+        ),
+      )
+  );
+?>
+<?php elseif(is_search()) : ?>
+  <?php 
+    if (isset($_GET['b'])) {
+      $args = array(
         'posts_per_page' => -1,
         'post_type' => 'kangoshi',
-        'meta_key' => 'rank',
+        'meta_key' => 'rank-baito',
         'orderby' => 'meta_value_num',
-        'order' => 'asc',
-    );
-
-$the_query = new WP_Query( $args );
- ?><?php function star($val) { ?><?php if($val==1) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--01.svg" alt="1"/><?php } elseif($val==2) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="2"/><?php } elseif($val==3) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--02.svg" alt="3"/><?php } else { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/star--03.svg" alt="4"/><?php } ?><?php }
- ?><?php function maru($val) { ?><?php if($val==1) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--01.svg" alt="1"/><?php } elseif($val==2) { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--02.svg" alt="2"/><?php } else { ?><img src="<?php bloginfo('template_url'); ?>/images/icons/maru--03.svg" alt="3"/><?php } ?><?php } ?>
+        'post_status' => 'publish',
+        'order' => $sort_order,
+        's' => $s,
+        'meta_query' => array($metaquerysp),
+        'category_name' => 'baito',
+    ); 
+    } else {
+    $args = array(
+        'posts_per_page' => -1,
+        'post_type' => 'kangoshi',
+        'meta_key' => $sort_key,
+        'orderby' => 'meta_value_num',
+        'post_status' => 'publish',
+        'order' => $sort_order,
+        's' => $s,
+        'meta_query' => array($metaquerysp),
+    ); 
+  }
+?>
+<?php else : ?>
+<?php $args = array(
+          'posts_per_page' => -1,
+          'post_type' => 'kangoshi',
+          'meta_key' => 'rank',
+          'post_status' => 'publish',
+          'orderby' => 'meta_value_num',
+          'order' => 'asc',
+      );
+?>
+<?php endif; ?>

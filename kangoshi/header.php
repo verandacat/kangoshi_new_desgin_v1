@@ -1,3 +1,4 @@
+<?php include "templates/function.php"; ?>
 <!DOCTYPE html>
 <html lang="ja">
   <head><?php include 'tags/headTag.php'; ?>
@@ -20,7 +21,7 @@
     <div id="container">
       <header id="header">
         <nav><a href="<?php echo home_url('/'); ?>"><?php if(!is_mobile()) : ?><img src="<?php bloginfo('template_url'); ?>/images/top/logo--pc.svg" alt="" width="600px"><?php else : ?><img src="<?php bloginfo('template_url'); ?>/images/top/logo--pc.png" alt=""><?php endif; ?></a></nav>
-      <?php if(is_front_page() || is_page('baito')) : ?>
+      <?php if(is_front_page() || is_page('baito') || is_page('todo')) : ?>
       <?php if(!is_mobile()) : ?>
         <picture>
           <source type="image/webp" srcset="<?php bloginfo('template_url'); ?>/images/top/fv--pc.webp"><img src="<?php bloginfo('template_url'); ?>/top/fv--pc.png" alt="看護師転職サイトランキング">
@@ -31,5 +32,3 @@
       <?php endif; ?>
       </header>
     </div>
-  </body>
-</html>
